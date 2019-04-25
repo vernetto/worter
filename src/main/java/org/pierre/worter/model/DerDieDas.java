@@ -1,9 +1,21 @@
 package org.pierre.worter.model;
 
-import java.util.Arrays;
+import java.util.*;
+
+/**
+ * IMplementing an enum with mapping between Articles and Genre
+ * https://www.baeldung.com/java-enum-values
+ */
 
 public enum DerDieDas {
     Der(Genre.M), Die(Genre.F), Das((Genre.N));
+
+    private static final Map<Genre, DerDieDas> genreMap = new HashMap<>();
+    static {
+        for (DerDieDas value : values()) {
+            genreMap.put(value.genre, value);
+        }
+    }
 
     private Genre genre;
 
@@ -11,7 +23,7 @@ public enum DerDieDas {
         genre = n;
     }
 
-    public static DerDieDas find(Genre g) {
-        return Arrays.asList(DerDieDas.values()).stream().filter(derDieDas -> derDieDas.genre == g).findFirst().get();
+    public static DerDieDas valueOfGenre(Genre g) {
+        return genreMap.get(g);
     }
 }

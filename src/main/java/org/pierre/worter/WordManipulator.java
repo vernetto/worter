@@ -11,6 +11,6 @@ public class WordManipulator {
         if (word.getType() != Type.NOUN) {
             throw new IllegalArgumentException(String.format("Type.NOUN  is required for %s", word.toString()));
         }
-        return DerDieDas.find(word.getGenre()) + " " + word.getName();
+        return DerDieDas.valueOfGenre(word.getGenre()) + " " + word.getName();
     }
 }
