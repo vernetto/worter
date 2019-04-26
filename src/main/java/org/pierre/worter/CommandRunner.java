@@ -24,7 +24,7 @@ public class CommandRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        IntStream.range(0, 20).forEach(value -> writeRandom());
+        readWriteAll();
     }
 
     private void writeRandom() {

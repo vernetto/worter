@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Löffel",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Gabel",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Messer",
+    "genre": "N",
+    "type": "NOUN"
+  },
+  {
+    "name": "Mensch",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Nachbarin",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Gast",
+    "genre": "M",
+    "type": "NOUN"
+  }
+]
