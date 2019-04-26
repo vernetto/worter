@@ -37,11 +37,11 @@ public class CommandRunner implements CommandLineRunner {
         List<Word> allWords = wordRepository.findAll();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        FileWriter writer = new FileWriter("allwords.json");
+        FileWriter writer = new FileWriter("allwordsout.json");
         gson.toJson(allWords, writer);
         writer.close();
 
-        FileReader reader = new FileReader("allwords.json");
+        FileReader reader = new FileReader("allwordsout.json");
         Word[] words = gson.fromJson(reader, Word[].class);
         Arrays.asList(words).stream().forEach(System.out::println);
     }

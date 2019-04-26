@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Löffel",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Gabel",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Messer",
+    "genre": "N",
+    "type": "NOUN"
+  },
+  {
+    "name": "Mensch",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Nachbarin",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Nachbar",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Freundin",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Vater",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Person",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Arzt",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Schüler",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Schülerin",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Freund",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Mädchen",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Schülerin",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Kollege",
+    "genre": "N",
+    "type": "NOUN"
+  },
+  {
+    "name": "Frau",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Gast",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Heft",
+    "genre": "N",
+    "type": "NOUN"
+  },
+  {
+    "name": "Fahrkarte",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Kugelschreiber",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Ausweis",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Bleistift",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Formular",
+    "genre": "N",
+    "type": "NOUN"
+  },
+  {
+    "name": "Füller",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Bescheinigung",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Lehrer",
+    "genre": "M",
+    "type": "NOUN"
+  }
+]
