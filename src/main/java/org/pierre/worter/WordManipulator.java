@@ -13,8 +13,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class WordManipulator {
+    private WordRepository wordRepository;
+
     @Autowired
-    WordRepository wordRepository;
+    public WordManipulator(WordRepository wordRepository) {
+        this.wordRepository = wordRepository;
+    }
 
     public String derDieDas(Word word) {
         if (word.getType() != Type.NOUN) {
