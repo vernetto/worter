@@ -11,6 +11,6 @@ public class WorterShell {
 
 //    @ShellMethod("print random word")
     public void random() {
-        System.out.println(wordRepository.getRandom());
+        System.out.println(wordRepository.getRandomWord());
     }
 }

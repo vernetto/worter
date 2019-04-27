@@ -12,7 +12,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
 
 @Configuration
 public class CommandRunner implements CommandLineRunner {
@@ -28,7 +27,7 @@ public class CommandRunner implements CommandLineRunner {
     }
 
     private void writeRandom() {
-        Word randomWord = wordRepository.getRandom();
+        Word randomWord = wordRepository.getRandomWord();
         System.out.println(randomWord);
         System.out.println(wordManipulator.derDieDas(randomWord));
     }
