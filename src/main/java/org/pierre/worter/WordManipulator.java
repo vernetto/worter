@@ -3,6 +3,7 @@ package org.pierre.worter;
 import org.pierre.worter.model.DerDieDas;
 import org.pierre.worter.model.Type;
 import org.pierre.worter.model.Word;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,10 +13,19 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class WordManipulator {
+    @Autowired
+    WordRepository wordRepository;
+
     public String derDieDas(Word word) {
         if (word.getType() != Type.NOUN) {
             throw new IllegalArgumentException(String.format("Type.NOUN  is required for %s", word.toString()));
         }
         return DerDieDas.valueOfGenre(word.getGenre()) + " " + word.getName();
     }
+
+    public String derDieDas(String wordString) {
+        Word word = wordRepository.findWord(wordString).get();
+        return derDieDas(word);
+    }
+
 }

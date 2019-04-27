@@ -18,9 +18,9 @@ public class WorterApplicationTests {
 
     @Test
     public void testDerDieDas() {
-        Word word = wordRepository.findWord("Löffel").get();
-        String result = wordManipulator.derDieDas(word);
-        assertEquals("der Löffel", result);
+        assertEquals("der Löffel", wordManipulator.derDieDas("Löffel"));
+        assertEquals("das Messer", wordManipulator.derDieDas("Messer"));
+        assertEquals("die Gabel", wordManipulator.derDieDas("Gabel"));
     }
 
 }
