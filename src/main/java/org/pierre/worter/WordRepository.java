@@ -3,7 +3,6 @@ package org.pierre.worter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import lombok.extern.slf4j.Slf4j;
-import org.pierre.worter.model.Type;
 import org.pierre.worter.model.Word;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +16,12 @@ import java.util.stream.Collectors;
 @Slf4j
 public class WordRepository {
 
-    List<Word> allWords = new ArrayList<>();
-    List<Word> allAdjectives = new ArrayList<>();
-    List<Word> allNouns = new ArrayList<>();
+    private List<Word> allWords = new ArrayList<>();
+    private List<Word> allAdjectives = new ArrayList<>();
+    private List<Word> allNouns = new ArrayList<>();
 
     @PostConstruct
-    void init() throws FileNotFoundException {
+    private void init() throws FileNotFoundException {
         loadFromFile();
     }
 
@@ -31,8 +30,8 @@ public class WordRepository {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Word[] words = gson.fromJson(reader, Word[].class);
         allWords = Arrays.asList(words);
-        allAdjectives = allWords.stream().filter(word -> word.getType().equals(Type.ADJ)).collect(Collectors.toList());
-        allNouns = allWords.stream().filter(word -> word.getType().equals(Type.NOUN)).collect(Collectors.toList());
+        allAdjectives = allWords.stream().filter(Word.isAdjective).collect(Collectors.toList());
+        allNouns = allWords.stream().filter(Word.isNoun).collect(Collectors.toList());
         log.info("total {} words, {} nouns, {} adjectives", allWords.size(), allNouns.size(), allAdjectives.size());
     }
 
@@ -41,7 +40,7 @@ public class WordRepository {
     }
 
     public Optional<Word> findWord(String theName) {
-        return allWords.stream().filter(name -> name.getName().equals(theName)).findFirst();
+        return allWords.stream().filter( word -> word.hasName(theName)).findFirst();
     }
 
 
