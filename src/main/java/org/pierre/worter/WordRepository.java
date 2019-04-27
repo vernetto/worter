@@ -2,22 +2,13 @@ package org.pierre.worter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.pierre.worter.model.Genre;
-import org.pierre.worter.model.Type;
 import org.pierre.worter.model.Word;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-
-import static java.util.Optional.of;
-import static org.pierre.worter.model.Genre.*;
-import static org.pierre.worter.model.Type.NOUN;
+import java.util.*;
 
 @Service
 public class WordRepository {
@@ -39,6 +30,11 @@ public class WordRepository {
     public List<Word> findAll() {
         return allNames;
     }
+
+    public Optional<Word> findWord(String theName) {
+        return allNames.stream().filter(name -> name.getName().equals(theName)).findFirst();
+    }
+
 
     public Word getRandom() {
         Random rand = new Random();

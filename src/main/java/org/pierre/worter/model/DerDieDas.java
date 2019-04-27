@@ -8,7 +8,7 @@ import java.util.*;
  */
 
 public enum DerDieDas {
-    Der(Genre.M), Die(Genre.F), Das((Genre.N));
+    der(Genre.M), die(Genre.F), das((Genre.N));
 
     private static final Map<Genre, DerDieDas> genreMap = new HashMap<>();
     static {

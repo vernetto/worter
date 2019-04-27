@@ -130,6 +130,61 @@
     "type": "NOUN"
   },
   {
+    "name": "Pass",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Visum",
+    "genre": "N",
+    "type": "NOUN"
+  },
+  {
+    "name": "Brieftasche",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Hose",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Tisch",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Auto",
+    "genre": "N",
+    "type": "NOUN"
+  },
+  {
+    "name": "Maschine",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
+    "name": "Wagen",
+    "genre": "M",
+    "type": "NOUN"
+  },
+  {
+    "name": "Buch",
+    "genre": "N",
+    "type": "NOUN"
+  },
+  {
+    "name": "Geld",
+    "genre": "N",
+    "type": "NOUN"
+  },
+  {
+    "name": "Seele",
+    "genre": "F",
+    "type": "NOUN"
+  },
+  {
     "name": "Lehrer",
     "genre": "M",
     "type": "NOUN"

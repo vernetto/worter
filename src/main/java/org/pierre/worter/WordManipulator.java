@@ -5,6 +5,11 @@ import org.pierre.worter.model.Type;
 import org.pierre.worter.model.Word;
 import org.springframework.stereotype.Component;
 
+/**
+ * Combines Words, Articles, Adjectives to form grammatically correct sentences,
+ * with a stress on the infamous Declination rules of German Grammar
+ */
+
 @Component
 public class WordManipulator {
     public String derDieDas(Word word) {

@@ -35,5 +35,6 @@
 	{ "name": "Wagen", "genre": "M", "type": "NOUN"},
 	{ "name": "Buch", "genre": "N", "type": "NOUN"},
 	{ "name": "Geld", "genre": "N", "type": "NOUN"},
+	{ "name": "Seele", "genre": "F", "type": "NOUN"},
 	{ "name": "Lehrer", "genre": "M", "type": "NOUN"}
 ]
