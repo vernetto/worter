@@ -32,7 +32,7 @@ public class WordRepository {
         allWords = Arrays.asList(words);
         allAdjectives = allWords.stream().filter(Word.isAdjective).collect(Collectors.toList());
         allNouns = allWords.stream().filter(Word.isNoun).collect(Collectors.toList());
-        log.info("total {} words, {} nouns, {} adjectives", allWords.size(), allNouns.size(), allAdjectives.size());
+        log.info("total {} wordsSet, {} nouns, {} adjectives", allWords.size(), allNouns.size(), allAdjectives.size());
     }
 
     public List<Word> findAll() {

@@ -21,9 +21,12 @@ public class CommandRunner implements CommandLineRunner {
     @Autowired
     WordManipulator wordManipulator;
 
+    @Autowired
+    WordLoader wordLoader;
+
     @Override
     public void run(String... args) throws Exception {
-        readWriteAll();
+        wordLoader.loadFile("D:\\pierre\\calibre\\Alice Cappagli\\Niente caffe per Spinoza (363)\\Niente caffe per Spinoza - Alice Cappagli.txt.transoutdestination");
     }
 
     private void writeRandom() {
