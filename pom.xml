@@ -12,7 +12,7 @@
     <artifactId>worter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>worter</name>
-    <description>Java generating German words</description>
+    <description>Java generating German nouns</description>
 
     <properties>
         <java.version>11</java.version>

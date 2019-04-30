@@ -1,7 +1,6 @@
 package org.pierre.worter;
 
 import org.junit.jupiter.api.Test;
-import org.pierre.worter.model.Word;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 

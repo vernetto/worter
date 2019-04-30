@@ -2,7 +2,7 @@ package org.pierre.worter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.pierre.worter.model.Word;
+import org.pierre.worter.model.Noun;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -30,21 +30,21 @@ public class CommandRunner implements CommandLineRunner {
     }
 
     private void writeRandom() {
-        Word randomWord = wordRepository.getRandomWord();
-        System.out.println(randomWord);
-        System.out.println(wordManipulator.derDieDas(randomWord));
+        Noun randomNoun = wordRepository.getRandomWord();
+        System.out.println(randomNoun);
+        System.out.println(wordManipulator.derDieDas(randomNoun));
     }
 
     private void readWriteAll() throws IOException {
-        List<Word> allWords = wordRepository.findAll();
+        List<Noun> allNouns = wordRepository.findAll();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         FileWriter writer = new FileWriter("allwordsout.json");
-        gson.toJson(allWords, writer);
+        gson.toJson(allNouns, writer);
         writer.close();
 
         FileReader reader = new FileReader("allwordsout.json");
-        Word[] words = gson.fromJson(reader, Word[].class);
-        Arrays.asList(words).stream().forEach(System.out::println);
+        Noun[] nouns = gson.fromJson(reader, Noun[].class);
+        Arrays.asList(nouns).stream().forEach(System.out::println);
     }
 }

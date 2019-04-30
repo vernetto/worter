@@ -2,7 +2,7 @@ package org.pierre.worter;
 
 import org.pierre.worter.model.DerDieDas;
 import org.pierre.worter.model.Type;
-import org.pierre.worter.model.Word;
+import org.pierre.worter.model.Noun;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -20,16 +20,16 @@ public class WordManipulator {
         this.wordRepository = wordRepository;
     }
 
-    public String derDieDas(Word word) {
-        if (word.getType() != Type.NOUN) {
-            throw new IllegalArgumentException(String.format("Type.NOUN  is required for %s", word.toString()));
+    public String derDieDas(Noun noun) {
+        if (noun.getType() != Type.NOUN) {
+            throw new IllegalArgumentException(String.format("Type.NOUN  is required for %s", noun.toString()));
         }
-        return DerDieDas.valueOfGenre(word.getGenre()) + " " + word.getName();
+        return DerDieDas.valueOfGenre(noun.getGenre()) + " " + noun.getName();
     }
 
     public String derDieDas(String wordString) {
-        Word word = wordRepository.findWord(wordString).get();
-        return derDieDas(word);
+        Noun noun = wordRepository.findWord(wordString).get();
+        return derDieDas(noun);
     }
 
 }

@@ -12,19 +12,20 @@ import java.util.function.Predicate;
 @ToString
 
 @RequiredArgsConstructor(staticName="of")
-public class Word {
-    final private String name;
-    final private Genre genre;
-    final private Type type;
+public class Noun implements DictionaryItem {
+    protected final String name;
 
     public boolean hasName(String name) {
         return this.name.equals(name);
     }
 
+    final private Genre genre;
+    final private Type type;
+
     public boolean hasType(Type type) {
         return this.getType().equals(type);
     }
 
-    public static Predicate<Word> isNoun = (word) -> word.hasType(Type.NOUN);
-    public static Predicate<Word> isAdjective = (word) -> word.hasType(Type.ADJ);
+    public static Predicate<Noun> isNoun = (word) -> word.hasType(Type.NOUN);
+    public static Predicate<Noun> isAdjective = (word) -> word.hasType(Type.ADJ);
 }

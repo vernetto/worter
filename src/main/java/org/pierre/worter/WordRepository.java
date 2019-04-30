@@ -3,7 +3,8 @@ package org.pierre.worter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import lombok.extern.slf4j.Slf4j;
-import org.pierre.worter.model.Word;
+import org.pierre.worter.model.Adjective;
+import org.pierre.worter.model.Noun;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -16,9 +17,8 @@ import java.util.stream.Collectors;
 @Slf4j
 public class WordRepository {
 
-    private List<Word> allWords = new ArrayList<>();
-    private List<Word> allAdjectives = new ArrayList<>();
-    private List<Word> allNouns = new ArrayList<>();
+    private List<Adjective> allAdjectives = new ArrayList<>();
+    private List<Noun> allNouns = new ArrayList<>();
 
     @PostConstruct
     private void init() throws FileNotFoundException {
@@ -26,39 +26,39 @@ public class WordRepository {
     }
 
     private void loadFromFile() throws FileNotFoundException {
-        FileReader reader = new FileReader("allwords.json");
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        Word[] words = gson.fromJson(reader, Word[].class);
-        allWords = Arrays.asList(words);
-        allAdjectives = allWords.stream().filter(Word.isAdjective).collect(Collectors.toList());
-        allNouns = allWords.stream().filter(Word.isNoun).collect(Collectors.toList());
-        log.info("total {} wordsSet, {} nouns, {} adjectives", allWords.size(), allNouns.size(), allAdjectives.size());
+        Noun[] nouns = gson.fromJson(new FileReader("allwords.json"), Noun[].class);
+        Adjective[] adjectives = gson.fromJson(new FileReader("alladjectives.json"), Adjective[].class);
+        allNouns = Arrays.asList(nouns);
+        allAdjectives = Arrays.asList(adjectives);
+        allNouns = allNouns.stream().filter(Noun.isNoun).collect(Collectors.toList());
+        log.info("total {} wordsSet, {} nouns, {} adjectives", allNouns.size(), allNouns.size(), allAdjectives.size());
     }
 
-    public List<Word> findAll() {
-        return allWords;
+    public List<Noun> findAll() {
+        return allNouns;
     }
 
-    public Optional<Word> findWord(String theName) {
-        return allWords.stream().filter( word -> word.hasName(theName)).findFirst();
+    public Optional<Noun> findWord(String theName) {
+        return allNouns.stream().filter(word -> word.hasName(theName)).findFirst();
     }
 
 
-    public Word getRandomWord() {
+    public Noun getRandomWord() {
         Random rand = new Random();
-        int index = rand.nextInt(allWords.size());
-        return allWords.get(index);
-    }
-
-    public Word getRandomNoun() {
-        Random rand = new Random();
-        int index = rand.nextInt(allWords.size());
+        int index = rand.nextInt(allNouns.size());
         return allNouns.get(index);
     }
 
-    public Word getRandomAdjective() {
+    public Noun getRandomNoun() {
         Random rand = new Random();
-        int index = rand.nextInt(allWords.size());
+        int index = rand.nextInt(allNouns.size());
+        return allNouns.get(index);
+    }
+
+    public Adjective getRandomAdjective() {
+        Random rand = new Random();
+        int index = rand.nextInt(allNouns.size());
         return allAdjectives.get(index);
     }
 
