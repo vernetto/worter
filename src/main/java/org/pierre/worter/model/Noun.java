@@ -20,7 +20,7 @@ public class Noun implements DictionaryItem {
     }
 
     final private Genre genre;
-    final private Type type;
+    final private Type type = Type.NOUN;
 
     public boolean hasType(Type type) {
         return this.getType().equals(type);
