@@ -1,4 +1,10 @@
 spring:
   main:
     web-application-type: NONE
-
+  datasource:
+    url: jdbc:h2:mem:worterdb
+    driverClassName: org.h2.Driver
+    username: worter
+    password: worter
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect

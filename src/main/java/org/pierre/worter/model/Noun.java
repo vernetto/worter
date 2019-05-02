@@ -20,12 +20,5 @@ public class Noun implements DictionaryItem {
     }
 
     final private Genre genre;
-    final private Type type = Type.NOUN;
 
-    public boolean hasType(Type type) {
-        return this.getType().equals(type);
-    }
-
-    public static Predicate<Noun> isNoun = (word) -> word.hasType(Type.NOUN);
-    public static Predicate<Noun> isAdjective = (word) -> word.hasType(Type.ADJ);
 }

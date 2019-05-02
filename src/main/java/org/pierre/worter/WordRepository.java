@@ -31,7 +31,7 @@ public class WordRepository {
         Adjective[] adjectives = gson.fromJson(new FileReader("alladjectives.json"), Adjective[].class);
         allNouns = Arrays.asList(nouns);
         allAdjectives = Arrays.asList(adjectives);
-        allNouns = allNouns.stream().filter(Noun.isNoun).collect(Collectors.toList());
+        allNouns = allNouns.stream().collect(Collectors.toList());
         log.info("total {} wordsSet, {} nouns, {} adjectives", allNouns.size(), allNouns.size(), allAdjectives.size());
     }
 
