@@ -16,6 +16,9 @@ import java.util.List;
 @Configuration
 public class CommandRunner implements CommandLineRunner {
     @Autowired
+    WordJSONRepository wordJSONRepository;
+
+    @Autowired
     WordRepository wordRepository;
 
     @Autowired
@@ -26,17 +29,17 @@ public class CommandRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        wordLoader.loadFile("D:\\pierre\\calibre\\Alice Cappagli\\Niente caffe per Spinoza (363)\\Niente caffe per Spinoza - Alice Cappagli.txt.transoutdestination");
+        loadDBFFromJSON();
     }
 
     private void writeRandom() {
-        Noun randomNoun = wordRepository.getRandomWord();
+        Noun randomNoun = wordJSONRepository.getRandomWord();
         System.out.println(randomNoun);
         System.out.println(wordManipulator.derDieDas(randomNoun));
     }
 
     private void readWriteAll() throws IOException {
-        List<Noun> allNouns = wordRepository.findAll();
+        List<Noun> allNouns = wordJSONRepository.findAll();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         FileWriter writer = new FileWriter("allwordsout.json");
@@ -46,5 +49,10 @@ public class CommandRunner implements CommandLineRunner {
         FileReader reader = new FileReader("allwordsout.json");
         Noun[] nouns = gson.fromJson(reader, Noun[].class);
         Arrays.asList(nouns).stream().forEach(System.out::println);
+    }
+
+    private void loadDBFFromJSON() {
+        List<Noun> allNouns = wordJSONRepository.findAll();
+        wordRepository.saveAll(allNouns);
     }
 }

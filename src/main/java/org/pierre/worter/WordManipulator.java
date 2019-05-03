@@ -1,7 +1,6 @@
 package org.pierre.worter;
 
 import org.pierre.worter.model.DerDieDas;
-import org.pierre.worter.model.Type;
 import org.pierre.worter.model.Noun;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,10 +12,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class WordManipulator {
-    private WordRepository wordRepository;
+    private WordJSONRepository wordRepository;
 
     @Autowired
-    public WordManipulator(WordRepository wordRepository) {
+    public WordManipulator(WordJSONRepository wordRepository) {
         this.wordRepository = wordRepository;
     }
 

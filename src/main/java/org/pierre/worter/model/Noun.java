@@ -5,6 +5,10 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.function.Predicate;
 
 @Data
@@ -12,8 +16,13 @@ import java.util.function.Predicate;
 @ToString
 
 @RequiredArgsConstructor(staticName="of")
+@Entity
 public class Noun implements DictionaryItem {
-    protected final String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    final private Long id;
+
+    final private String name;
 
     public boolean hasName(String name) {
         return this.name.equals(name);

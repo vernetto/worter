@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 //@ShellComponent
 public class WorterShell {
     @Autowired
-    WordRepository wordRepository;
+    WordJSONRepository wordRepository;
 
 //    @ShellMethod("print random word")
     public void random() {

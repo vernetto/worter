@@ -13,7 +13,7 @@ public class WorterApplicationTests {
     @Autowired
     WordManipulator wordManipulator;
     @Autowired
-    WordRepository wordRepository;
+    WordJSONRepository wordRepository;
 
     @Test
     public void testDerDieDas() {
